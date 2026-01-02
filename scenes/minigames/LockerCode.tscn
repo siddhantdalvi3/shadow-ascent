@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://by2cdfldau1si" path="res://scripts/minigames/locker_code.gd" id="1"]
+
+[node name="LockerCode" type="Control"]
+script = ExtResource(1)

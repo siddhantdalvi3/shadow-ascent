@@ -1,0 +1,194 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://c5vm2lc48ljgd" path="res://scripts/ui/penthouse_ending.gd" id="1"]
+
+[sub_resource type="Theme" id="Theme_1"]
+
+[node name="PenthouseEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.02, 0.02, 0.05, 1)
+
+[node name="CityView" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+color = Color(0.1, 0.1, 0.2, 0.8)
+
+[node name="ScrollingContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ContentContainer" type="VBoxContainer" parent="ScrollingContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 1200)
+
+[node name="Spacer1" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+
+[node name="Title" type="Label" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1")
+text = "SHADOW ASCENT"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+text = "MISSION ACCOMPLISHED"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="StoryContainer" type="VBoxContainer" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="StoryText1" type="RichTextLabel" parent="ScrollingContainer/ContentContainer/StoryContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+bbcode_enabled = true
+text = "[center]You've reached the penthouse. The city sprawls below you, its lights twinkling like stars in the darkness. The corporate tower that once seemed insurmountable now lies conquered beneath your feet.[/center]"
+fit_content = true
+
+[node name="Spacer3" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="StoryText2" type="RichTextLabel" parent="ScrollingContainer/ContentContainer/StoryContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+bbcode_enabled = true
+text = "[center]The data you've extracted will expose the corporation's darkest secrets. The zombie outbreak, the cover-ups, the innocent lives lost - all of it will come to light.[/center]"
+fit_content = true
+
+[node name="Spacer4" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="StoryText3" type="RichTextLabel" parent="ScrollingContainer/ContentContainer/StoryContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+bbcode_enabled = true
+text = "[center]As dawn breaks over the horizon, you know that justice will finally be served. The shadows that once concealed the truth have been illuminated by your courage.[/center]"
+fit_content = true
+
+[node name="Spacer5" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="VictoryMessage" type="Label" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+text = "CONGRATULATIONS!"
+horizontal_alignment = 1
+
+[node name="Spacer6" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="StatsContainer" type="VBoxContainer" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="StatsTitle" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer"]
+layout_mode = 2
+text = "FINAL STATISTICS"
+horizontal_alignment = 1
+
+[node name="StatsGrid" type="GridContainer" parent="ScrollingContainer/ContentContainer/StatsContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="FloorsLabel" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "Floors Completed:"
+
+[node name="FloorsValue" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "6/6"
+horizontal_alignment = 2
+
+[node name="TimeLabel" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "Total Time:"
+
+[node name="TimeValue" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "15:30"
+horizontal_alignment = 2
+
+[node name="DetectionsLabel" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "Total Detections:"
+
+[node name="DetectionsValue" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 2
+
+[node name="OverallGradeLabel" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "Overall Grade:"
+
+[node name="OverallGradeValue" type="Label" parent="ScrollingContainer/ContentContainer/StatsContainer/StatsGrid"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+
+[node name="Spacer7" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="CreditsContainer" type="VBoxContainer" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="CreditsTitle" type="Label" parent="ScrollingContainer/ContentContainer/CreditsContainer"]
+layout_mode = 2
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="CreditsText" type="RichTextLabel" parent="ScrollingContainer/ContentContainer/CreditsContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 200)
+bbcode_enabled = true
+text = "[center]\n[b]Shadow Ascent[/b]\nA Stealth Action Game\n\n[b]Game Design & Development[/b]\nInteractive Systems Project\n\n[b]Special Thanks[/b]\nTo all the brave souls who dare to climb the tower\nand expose the truth hidden in the shadows.\n\n[b]\"In darkness, we find the light of justice.\"[/b]\n[/center]"
+fit_content = true
+
+[node name="Spacer8" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+
+[node name="ButtonContainer" type="HBoxContainer" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="PlayAgainButton" type="Button" parent="ScrollingContainer/ContentContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="ScrollingContainer/ContentContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Main Menu"
+
+[node name="Spacer9" type="Control" parent="ScrollingContainer/ContentContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)

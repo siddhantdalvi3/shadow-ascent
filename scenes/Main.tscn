@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxl60bnyv6arb"]
+
+[ext_resource type="Script" uid="uid://64tn1r3pslvt" path="res://scripts/systems/camera_follow.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b0pg36u5xp81" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="Script" uid="uid://brc2hkhwtcj4t" path="res://scripts/core/bootstrap_input.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/Guard.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="5"]
+[ext_resource type="Script" uid="uid://cbqmxfylgjy01" path="res://scripts/core/game.gd" id="6"]
+
+[sub_resource type="Environment" id="4_env"]
+background_mode = 1
+fog_enabled = true
+fog_light_energy = 0.0
+
+[sub_resource type="BoxShape3D" id="6"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="5"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="7"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="BoxMesh" id="8"]
+size = Vector3(4, 2, 4)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, -0.25, 0.866025, -0.433013, 0.433013, 0.5, 0.75, 0, 10, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("4_env")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("6")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("5")
+
+[node name="Goal" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="GoalShape" type="CollisionShape3D" parent="Goal"]
+shape = SubResource("7")
+
+[node name="GoalMesh" type="MeshInstance3D" parent="Goal"]
+mesh = SubResource("8")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1")
+target_path = NodePath("../Player")
+
+[node name="Guard" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+player_path = NodePath("../Player")
+
+[node name="HUD" parent="." instance=ExtResource("5")]
+
+[node name="Game" type="Node" parent="."]
+script = ExtResource("6")

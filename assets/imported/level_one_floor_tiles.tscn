@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgj70vd81wur5"]
+
+[ext_resource type="PackedScene" uid="uid://bq7t3pf5v0tyq" path="res://assets/kits/kenney_building-kit/Models/FBX format/floor.fbx" id="1_vwrwp"]
+
+[node name="Level_One_Floor_Tiles" type="Node3D"]
+
+[node name="floor" parent="." instance=ExtResource("1_vwrwp")]

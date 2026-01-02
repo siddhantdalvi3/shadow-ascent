@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" uid="uid://didkcw4tu5yro" path="res://scripts/levels/game_floor.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b0pg36u5xp81" path="res://scenes/Player.tscn" id="2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(20, 0.2, 20)
+
+[sub_resource type="Theme" id="Theme_1"]
+
+[node name="GameFloor" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Environment"]
+mesh = SubResource("BoxMesh_1")
+
+[node name="Walls" type="Node3D" parent="Environment"]
+
+[node name="Wall1" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+mesh = SubResource("BoxMesh_1")
+
+[node name="Wall2" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
+mesh = SubResource("BoxMesh_1")
+
+[node name="Wall3" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 2, 0)
+mesh = SubResource("BoxMesh_1")
+
+[node name="Wall4" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 2, 0)
+mesh = SubResource("BoxMesh_1")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TopPanel" type="Panel" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="FloorInfo" type="HBoxContainer" parent="GameUI/TopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+
+[node name="FloorTitle" type="Label" parent="GameUI/TopPanel/FloorInfo"]
+layout_mode = 2
+theme = SubResource("Theme_1")
+text = "FLOOR 2: RESIDENTIAL"
+
+[node name="Spacer" type="Control" parent="GameUI/TopPanel/FloorInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Timer" type="Label" parent="GameUI/TopPanel/FloorInfo"]
+layout_mode = 2
+text = "Time: 00:00"
+
+[node name="ObjectivesPanel" type="VBoxContainer" parent="GameUI/TopPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+
+[node name="ObjectivesTitle" type="Label" parent="GameUI/TopPanel/ObjectivesPanel"]
+layout_mode = 2
+text = "Objectives:"
+
+[node name="ObjectivesList" type="VBoxContainer" parent="GameUI/TopPanel/ObjectivesPanel"]
+layout_mode = 2
+
+[node name="Obj1" type="CheckBox" parent="GameUI/TopPanel/ObjectivesPanel/ObjectivesList"]
+layout_mode = 2
+text = "Locate keycard"
+
+[node name="Obj2" type="CheckBox" parent="GameUI/TopPanel/ObjectivesPanel/ObjectivesList"]
+layout_mode = 2
+text = "Access security terminal"
+
+[node name="Obj3" type="CheckBox" parent="GameUI/TopPanel/ObjectivesPanel/ObjectivesList"]
+layout_mode = 2
+text = "Reach elevator"
+
+[node name="BottomPanel" type="Panel" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="StatusContainer" type="HBoxContainer" parent="GameUI/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+
+[node name="StatusLabel" type="Label" parent="GameUI/BottomPanel/StatusContainer"]
+layout_mode = 2
+text = "Status: Infiltrating..."
+
+[node name="Spacer" type="Control" parent="GameUI/BottomPanel/StatusContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ButtonContainer" type="HBoxContainer" parent="GameUI/BottomPanel/StatusContainer"]
+layout_mode = 2
+
+[node name="PauseButton" type="Button" parent="GameUI/BottomPanel/StatusContainer/ButtonContainer"]
+layout_mode = 2
+text = "Pause"
+
+[node name="CompleteFloorButton" type="Button" parent="GameUI/BottomPanel/StatusContainer/ButtonContainer"]
+layout_mode = 2
+text = "Complete Floor (Prototype)"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 5, 0)

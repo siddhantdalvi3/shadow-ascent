@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyyv4q0ionusn"]
+
+[ext_resource type="PackedScene" uid="uid://blr2hl8vop4dq" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall.fbx" id="1_lemw4"]
+[ext_resource type="PackedScene" uid="uid://bhf8d5madpe62" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-corner.fbx" id="2_t2eqm"]
+[ext_resource type="PackedScene" uid="uid://bnf0q21ioo5xc" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-door-rotate.fbx" id="3_fa668"]
+[ext_resource type="PackedScene" uid="uid://bqmdfxjgmk383" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-window.fbx" id="4_5oj26"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_lemw4")]
+
+[node name="wall-corner" parent="." instance=ExtResource("2_t2eqm")]
+
+[node name="wall-door-rotate" parent="." instance=ExtResource("3_fa668")]
+
+[node name="wall-window" parent="." instance=ExtResource("4_5oj26")]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=21 format=3 uid="uid://d2xf1edijun0l"]
+
+[ext_resource type="PackedScene" uid="uid://rkxuj3vp1pef" path="res://assets/kits/kenney_mini-market/Models/FBX format/bottle-return.fbx" id="1_qbmkt"]
+[ext_resource type="PackedScene" uid="uid://cudqwngt4eynx" path="res://assets/kits/kenney_mini-market/Models/FBX format/cash-register.fbx" id="2_5ylv7"]
+[ext_resource type="PackedScene" uid="uid://d3fl4k471txuf" path="res://assets/kits/kenney_mini-market/Models/FBX format/character-employee.fbx" id="3_w4tyk"]
+[ext_resource type="PackedScene" uid="uid://cymlvmiot3u25" path="res://assets/kits/kenney_mini-market/Models/FBX format/column.fbx" id="4_ogsdm"]
+[ext_resource type="PackedScene" uid="uid://d0o1pi20s2cn8" path="res://assets/kits/kenney_mini-market/Models/FBX format/display-bread.fbx" id="5_uwv3c"]
+[ext_resource type="PackedScene" uid="uid://f3157ngyxbb" path="res://assets/kits/kenney_mini-market/Models/FBX format/display-fruit.fbx" id="6_dt62m"]
+[ext_resource type="PackedScene" uid="uid://cfpfwwvv81gn5" path="res://assets/kits/kenney_mini-market/Models/FBX format/fence-door-rotate.fbx" id="7_1pds2"]
+[ext_resource type="PackedScene" uid="uid://0lurreov57lh" path="res://assets/kits/kenney_mini-market/Models/FBX format/fence.fbx" id="8_ovi6u"]
+[ext_resource type="PackedScene" uid="uid://ct3idf08y1gby" path="res://assets/kits/kenney_mini-market/Models/FBX format/floor.fbx" id="9_13b75"]
+[ext_resource type="PackedScene" uid="uid://ce2vmlpx8mx76" path="res://assets/kits/kenney_mini-market/Models/FBX format/freezer.fbx" id="10_v86es"]
+[ext_resource type="PackedScene" uid="uid://x7jl5feq8xjb" path="res://assets/kits/kenney_mini-market/Models/FBX format/freezers-standing.fbx" id="11_ecxma"]
+[ext_resource type="PackedScene" uid="uid://bdcr3cil061kn" path="res://assets/kits/kenney_mini-market/Models/FBX format/shelf-bags.fbx" id="12_uxqlq"]
+[ext_resource type="PackedScene" uid="uid://8n8ybfpnawef" path="res://assets/kits/kenney_mini-market/Models/FBX format/shelf-boxes.fbx" id="13_7sarr"]
+[ext_resource type="PackedScene" uid="uid://b11n5atnh57ao" path="res://assets/kits/kenney_mini-market/Models/FBX format/shelf-end.fbx" id="14_mbkdf"]
+[ext_resource type="PackedScene" uid="uid://b6cq60lehfm52" path="res://assets/kits/kenney_mini-market/Models/FBX format/shopping-basket.fbx" id="15_kqrbr"]
+[ext_resource type="PackedScene" uid="uid://c3jfmh53xx8f0" path="res://assets/kits/kenney_mini-market/Models/FBX format/shopping-cart.fbx" id="16_bck28"]
+[ext_resource type="PackedScene" uid="uid://bhf8d5madpe62" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-corner.fbx" id="17_dh5t2"]
+[ext_resource type="PackedScene" uid="uid://bnf0q21ioo5xc" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-door-rotate.fbx" id="18_cb4cf"]
+[ext_resource type="PackedScene" uid="uid://bqmdfxjgmk383" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall-window.fbx" id="19_u8hhr"]
+[ext_resource type="PackedScene" uid="uid://blr2hl8vop4dq" path="res://assets/kits/kenney_mini-market/Models/FBX format/wall.fbx" id="20_r7agy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="bottle-return" parent="." instance=ExtResource("1_qbmkt")]
+
+[node name="cash-register" parent="." instance=ExtResource("2_5ylv7")]
+
+[node name="character-employee" parent="." instance=ExtResource("3_w4tyk")]
+
+[node name="column" parent="." instance=ExtResource("4_ogsdm")]
+
+[node name="display-bread" parent="." instance=ExtResource("5_uwv3c")]
+
+[node name="display-fruit" parent="." instance=ExtResource("6_dt62m")]
+
+[node name="fence-door-rotate" parent="." instance=ExtResource("7_1pds2")]
+
+[node name="fence" parent="." instance=ExtResource("8_ovi6u")]
+
+[node name="floor" parent="." instance=ExtResource("9_13b75")]
+
+[node name="freezer" parent="." instance=ExtResource("10_v86es")]
+
+[node name="freezers-standing" parent="." instance=ExtResource("11_ecxma")]
+
+[node name="shelf-bags" parent="." instance=ExtResource("12_uxqlq")]
+
+[node name="shelf-boxes" parent="." instance=ExtResource("13_7sarr")]
+
+[node name="shelf-end" parent="." instance=ExtResource("14_mbkdf")]
+
+[node name="shopping-basket" parent="." instance=ExtResource("15_kqrbr")]
+
+[node name="shopping-cart" parent="." instance=ExtResource("16_bck28")]
+
+[node name="wall-corner" parent="." instance=ExtResource("17_dh5t2")]
+
+[node name="wall-door-rotate" parent="." instance=ExtResource("18_cb4cf")]
+
+[node name="wall-window" parent="." instance=ExtResource("19_u8hhr")]
+
+[node name="wall" parent="." instance=ExtResource("20_r7agy")]

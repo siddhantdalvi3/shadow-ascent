@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" uid="uid://kq0kedvd57ed" path="res://scripts/entities/guard.gd" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="3"]
+radius = 0.4
+height = 1.8
+
+[node name="Guard" type="CharacterBody3D"]
+script = ExtResource("1")
+speed = 3.0
+fov_deg = 70.0
+view_range = 15.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Guard"]
+shape = SubResource("2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Guard"]
+mesh = SubResource("3")
+
+[node name="Waypoints" type="Node3D" parent="Guard"]
+
+[node name="WP1" type="Node3D" parent="Guard/Waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="WP2" type="Node3D" parent="Guard/Waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)

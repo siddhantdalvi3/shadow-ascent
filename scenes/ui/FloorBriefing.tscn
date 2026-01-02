@@ -1,0 +1,164 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://cpndr24e5pbxv" path="res://scripts/ui/floor_briefing.gd" id="1"]
+
+[sub_resource type="Theme" id="Theme_1"]
+
+[node name="FloorBriefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.08, 0.08, 0.12, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+
+[node name="BriefingPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FloorTitle" type="Label" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+theme = SubResource("Theme_1")
+text = "FLOOR 1: LOBBY & UTILITIES"
+horizontal_alignment = 1
+
+[node name="Separator1" type="HSeparator" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+
+[node name="ObjectivesLabel" type="Label" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+text = "OBJECTIVES:"
+
+[node name="ObjectivesList" type="VBoxContainer" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+
+[node name="Objective1" type="CheckBox" parent="HBoxContainer/BriefingPanel/ObjectivesList"]
+layout_mode = 2
+text = "Clear 5 Zombies"
+disabled = true
+
+[node name="Objective2" type="CheckBox" parent="HBoxContainer/BriefingPanel/ObjectivesList"]
+layout_mode = 2
+text = "Assist 2 NPCs"
+disabled = true
+
+[node name="Objective3" type="CheckBox" parent="HBoxContainer/BriefingPanel/ObjectivesList"]
+layout_mode = 2
+text = "Learn Basic Controls"
+disabled = true
+
+[node name="Separator2" type="HSeparator" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+
+[node name="FloorMapLabel" type="Label" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+text = "FLOOR MAP:"
+
+[node name="FloorMapPlaceholder" type="ColorRect" parent="HBoxContainer/BriefingPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 200)
+color = Color(0.2, 0.2, 0.25, 1)
+
+[node name="MapLabel" type="Label" parent="HBoxContainer/BriefingPanel/FloorMapPlaceholder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -10.0
+offset_right = 50.0
+offset_bottom = 10.0
+text = "[Floor Map]"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="LoadoutPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LoadoutTitle" type="Label" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+text = "LOADOUT SELECTION"
+horizontal_alignment = 1
+
+[node name="Separator3" type="HSeparator" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+
+[node name="WeaponsLabel" type="Label" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+text = "WEAPONS:"
+
+[node name="WeaponGrid" type="GridContainer" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+columns = 2
+
+[node name="PistolButton" type="Button" parent="HBoxContainer/LoadoutPanel/WeaponGrid"]
+layout_mode = 2
+text = "Pistol"
+
+[node name="RifleButton" type="Button" parent="HBoxContainer/LoadoutPanel/WeaponGrid"]
+layout_mode = 2
+text = "Rifle"
+
+[node name="ShotgunButton" type="Button" parent="HBoxContainer/LoadoutPanel/WeaponGrid"]
+layout_mode = 2
+text = "Shotgun"
+
+[node name="SMGButton" type="Button" parent="HBoxContainer/LoadoutPanel/WeaponGrid"]
+layout_mode = 2
+text = "SMG"
+
+[node name="Separator4" type="HSeparator" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+
+[node name="ToolsLabel" type="Label" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+text = "TOOLS:"
+
+[node name="ToolGrid" type="GridContainer" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+columns = 2
+
+[node name="FlashlightButton" type="Button" parent="HBoxContainer/LoadoutPanel/ToolGrid"]
+layout_mode = 2
+text = "Flashlight"
+
+[node name="MedkitButton" type="Button" parent="HBoxContainer/LoadoutPanel/ToolGrid"]
+layout_mode = 2
+text = "Medkit"
+
+[node name="KeycardButton" type="Button" parent="HBoxContainer/LoadoutPanel/ToolGrid"]
+layout_mode = 2
+text = "Keycard"
+
+[node name="GrappleButton" type="Button" parent="HBoxContainer/LoadoutPanel/ToolGrid"]
+layout_mode = 2
+text = "Grapple"
+
+[node name="Spacer" type="Control" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BeginFloorButton" type="Button" parent="HBoxContainer/LoadoutPanel"]
+layout_mode = 2
+text = "BEGIN FLOOR"

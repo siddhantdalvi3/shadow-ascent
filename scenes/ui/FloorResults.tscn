@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://cyuurbgrrvory" path="res://scripts/ui/floor_results.gd" id="1"]
+
+[sub_resource type="Theme" id="Theme_1"]
+
+[node name="FloorResults" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.08, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ResultsPanel" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 0)
+
+[node name="Title" type="Label" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+theme = SubResource("Theme_1")
+text = "FLOOR COMPLETED"
+horizontal_alignment = 1
+
+[node name="Separator1" type="HSeparator" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="FloorInfo" type="VBoxContainer" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="FloorName" type="Label" parent="CenterContainer/ResultsPanel/FloorInfo"]
+layout_mode = 2
+text = "FLOOR 1: LOBBY & UTILITIES"
+horizontal_alignment = 1
+
+[node name="Separator2" type="HSeparator" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="ResultsGrid" type="GridContainer" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+columns = 2
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "Completion Time:"
+
+[node name="TimeValue" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "45.0s"
+horizontal_alignment = 2
+
+[node name="ObjectivesLabel" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "Objectives Completed:"
+
+[node name="ObjectivesValue" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "3/3"
+horizontal_alignment = 2
+
+[node name="DetectionsLabel" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "Detections:"
+
+[node name="DetectionsValue" type="Label" parent="CenterContainer/ResultsPanel/ResultsGrid"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Separator3" type="HSeparator" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="GradeContainer" type="HBoxContainer" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="GradeLabel" type="Label" parent="CenterContainer/ResultsPanel/GradeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Performance Grade:"
+
+[node name="GradeValue" type="Label" parent="CenterContainer/ResultsPanel/GradeContainer"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 1
+
+[node name="Separator4" type="HSeparator" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="RewardsLabel" type="Label" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+text = "Rewards Earned:"
+horizontal_alignment = 1
+
+[node name="RewardsList" type="VBoxContainer" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="Reward1" type="Label" parent="CenterContainer/ResultsPanel/RewardsList"]
+layout_mode = 2
+text = "• Floor Access: Residential"
+horizontal_alignment = 1
+
+[node name="Reward2" type="Label" parent="CenterContainer/ResultsPanel/RewardsList"]
+layout_mode = 2
+text = "• Experience Points: +100"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/ResultsPanel"]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="CenterContainer/ResultsPanel/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Retry Floor"
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/ResultsPanel/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continue to Next Floor"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/ResultsPanel/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Main Menu"

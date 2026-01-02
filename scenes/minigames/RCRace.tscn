@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://djhmopgv7n4fu" path="res://scripts/minigames/rc_race.gd" id="1"]
+
+[node name="RCRace" type="Control"]
+script = ExtResource(1)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddj0ak21txkpc"]
+
+[ext_resource type="PackedScene" uid="uid://dg4q1feeo1syv" path="res://assets/kits/kenney_city-kit-roads/Models/GLB format/road-straight.glb" id="1_5706b"]
+
+[node name="CityRoad" type="Node3D"]
+
+[node name="road-straight2" parent="." instance=ExtResource("1_5706b")]

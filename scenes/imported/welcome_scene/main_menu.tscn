@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ybdq5eafmqg4"]
+
+[ext_resource type="Script" uid="uid://ccdu514iuugu7" path="res://scripts/imported/main_menu_stub_autosize.gd" id="1_thcu8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -0.3840332
+offset_bottom = -0.21606445
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thcu8")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4

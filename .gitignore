@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# IDE specific ignores
+.vscode/
+.idea/
+*.iml
+.trae
+
+# Kenney assets
+assets/kits/kenney_*
+
+/imgs
+
+# System files
+.DS_Store
+Thumbs.db
